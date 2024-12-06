@@ -10,6 +10,7 @@ from model import SimpleCNN
 from pretrained_model import get_pretrained_model
 from tqdm import tqdm
 from augmentations import make_augmentations
+from patch import PatchShuffleTransform
 
 def calculate_metrics_per_class(correct_per_class, total_per_class):
     num_classes = len(correct_per_class)
@@ -95,6 +96,7 @@ if __name__ == "__main__":
     parser.add_argument("--epochs", type=int, default=10, help="Number of epochs to train")
     parser.add_argument("--test-split", type=float, default=0.2, help="Fraction of data to use as test set")
     parser.add_argument("--weight-decay", type=float, default=1e-4, help="Weight decay (L2 regularization)")
+    parser.add_argument("--patch", action='store_true', help="Use patch-and-shuffle approach if set")
     args = parser.parse_args()
 
     # Hyperparameters
@@ -120,32 +122,38 @@ if __name__ == "__main__":
     train_size = len(full_dataset) - test_size
     train_dataset, test_dataset = random_split(full_dataset, [train_size, test_size])
     
+    # Build transforms depending on patch flag
+    # If patch is True, we insert PatchShuffleTransform before ToTensor and Normalize.
+    if args.patch:
+        final_transform = transforms.Compose([
+            PatchShuffleTransform(patch_size=16),  # you can change patch_size if needed
+            transforms.ToTensor(),
+            transforms.Normalize([0.485,0.456,0.406],[0.229,0.224,0.225])
+        ])
+    else:
+        final_transform = transforms.Compose([
+            transforms.ToTensor(),
+            transforms.Normalize([0.485,0.456,0.406],[0.229,0.224,0.225])
+        ])
+    
     class FinalTransformDataset(torch.utils.data.Dataset):
-        def __init__(self, base_dataset):
+        def __init__(self, base_dataset, transform):
             self.base_dataset = base_dataset
-            self.final_transform = transforms.Compose([
-                transforms.ToTensor(),
-                transforms.Normalize([0.485,0.456,0.406],[0.229,0.224,0.225])
-            ])
+            self.transform = transform
         
         def __len__(self):
             return len(self.base_dataset)
         
         def __getitem__(self, idx):
             image, label = self.base_dataset[idx]
-            image = self.final_transform(image)
+            image = self.transform(image)
             return image, label
     
-    aug_list = make_augmentations(base_size=base_size)
-    
     class AugTransformDataset(torch.utils.data.Dataset):
-        def __init__(self, base_dataset, aug_transform):
+        def __init__(self, base_dataset, aug_transform, final_transform):
             self.base_dataset = base_dataset
             self.aug_transform = aug_transform
-            self.final_transform = transforms.Compose([
-                transforms.ToTensor(),
-                transforms.Normalize([0.485,0.456,0.406],[0.229,0.224,0.225])
-            ])
+            self.final_transform = final_transform
         
         def __len__(self):
             return len(self.base_dataset)
@@ -156,14 +164,16 @@ if __name__ == "__main__":
             image = self.final_transform(image)
             return image, label
     
+    aug_list = make_augmentations(base_size=base_size)
+
     # Training set: original + augmented
-    train_original = FinalTransformDataset(train_dataset)
-    aug_datasets_train = [AugTransformDataset(train_dataset, aug_t) for aug_t in aug_list]
-    combined_train_dataset = ConcatDataset([train_original] + aug_datasets_train)
+    train_original = FinalTransformDataset(train_dataset, final_transform)
+    aug_datasets = [AugTransformDataset(train_dataset, aug_t, final_transform) for aug_t in aug_list]
+    combined_train_dataset = ConcatDataset([train_original] + aug_datasets)
     
     # Testing set: original + augmented
-    test_original = FinalTransformDataset(test_dataset)
-    aug_datasets_test = [AugTransformDataset(test_dataset, aug_t) for aug_t in aug_list]
+    test_original = FinalTransformDataset(test_dataset, final_transform)
+    aug_datasets_test = [AugTransformDataset(test_dataset, aug_t, final_transform) for aug_t in aug_list]
     combined_test_dataset = ConcatDataset([test_original] + aug_datasets_test)
     
     train_loader = DataLoader(combined_train_dataset, batch_size=batch_size, shuffle=True, num_workers=4)
