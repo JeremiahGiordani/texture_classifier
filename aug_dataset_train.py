@@ -13,6 +13,7 @@ from augmentations import make_augmentations
 from patch import PatchShuffleTransform
 import datetime
 import sys
+from focal_loss import FocalLoss
 
 # Redirect print output to a log file
 class Logger:
@@ -115,6 +116,7 @@ if __name__ == "__main__":
     parser.add_argument("--patch", action='store_true', help="Use patch-and-shuffle approach if set")
     parser.add_argument("--learning-rate", type=float, default=0.001, help="Learning rate for the optimizer")  # Added flag for learning rate
     parser.add_argument("--log-file", type=str, default=None, help="Optional log file name")
+    parser.add_argument("--focal-loss", action='store_true', help="Use focal loss instead of cross-entropy loss")
     args = parser.parse_args()
 
     # Configure log file
@@ -223,8 +225,15 @@ if __name__ == "__main__":
         model = get_pretrained_model(num_classes=num_classes).to(device)
     else:
         model = SimpleCNN(num_classes=num_classes).to(device)
-    
-    criterion = nn.CrossEntropyLoss()
+
+    # Define the criterion based on the --focal-loss flag
+    if args.focal_loss:
+        print("Using Focal Loss")
+        criterion = FocalLoss(gamma=2, alpha=None)  # Adjust gamma/alpha as needed
+    else:
+        print("Using Cross Entropy Loss")
+        criterion = nn.CrossEntropyLoss()
+
     optimizer = optim.Adam(model.parameters(), lr=lr, weight_decay=weight_decay)
     
     best_test_acc = 0.0
