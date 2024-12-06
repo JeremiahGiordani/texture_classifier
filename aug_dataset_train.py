@@ -11,6 +11,22 @@ from pretrained_model import get_pretrained_model
 from tqdm import tqdm
 from augmentations import make_augmentations
 from patch import PatchShuffleTransform
+import datetime
+import sys
+
+# Redirect print output to a log file
+class Logger:
+    def __init__(self, filename):
+        self.terminal = sys.stdout
+        self.log = open(filename, "a")
+
+    def write(self, message):
+        self.terminal.write(message)
+        self.log.write(message)
+
+    def flush(self):
+        self.terminal.flush()
+        self.log.flush()
 
 def calculate_metrics_per_class(correct_per_class, total_per_class):
     num_classes = len(correct_per_class)
@@ -98,7 +114,17 @@ if __name__ == "__main__":
     parser.add_argument("--weight-decay", type=float, default=1e-4, help="Weight decay (L2 regularization)")
     parser.add_argument("--patch", action='store_true', help="Use patch-and-shuffle approach if set")
     parser.add_argument("--learning-rate", type=float, default=0.001, help="Learning rate for the optimizer")  # Added flag for learning rate
+    parser.add_argument("--log-file", type=str, default=None, help="Optional log file name")
     args = parser.parse_args()
+
+    # Configure log file
+    if args.log_file:
+        log_filename = args.log_file
+    else:
+        timestamp = datetime.datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
+        log_filename = f"training-metrics-{timestamp}.log"
+    
+    sys.stdout = Logger(log_filename)
 
     # Hyperparameters
     batch_size = 32
