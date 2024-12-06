@@ -126,7 +126,7 @@ if __name__ == "__main__":
         timestamp = datetime.datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
         log_filename = f"slurm_jobs/outputs/training-metrics-{timestamp}.log"
     
-    sys.stdout = Logger(log_filename)
+    # sys.stdout = Logger(log_filename)
 
     # Hyperparameters
     batch_size = 32
@@ -237,6 +237,7 @@ if __name__ == "__main__":
     optimizer = optim.Adam(model.parameters(), lr=lr, weight_decay=weight_decay)
     
     best_test_acc = 0.0
+    total_accuracy = 0
     
     for epoch in range(epochs):
         print(f"Epoch [{epoch+1}/{epochs}]")
@@ -251,6 +252,10 @@ if __name__ == "__main__":
         for c, acc in enumerate(test_class_acc):
             print(f"  Test Class {c} Acc: {acc:.2f}%")
         
+        total_accuracy += test_acc
+        print(f"Average Accuracy: {total_accuracy / (epoch + 1):.2f}%")
+
+        
         if test_acc > best_test_acc:
             best_test_acc = test_acc
             torch.save(model.state_dict(), save_path)
@@ -258,3 +263,4 @@ if __name__ == "__main__":
 
     print("Training complete.")
     print(f"Best Test Acc: {best_test_acc:.2f}%")
+    print(f"Average Accuracy: {total_accuracy / (epochs):.2f}%")
