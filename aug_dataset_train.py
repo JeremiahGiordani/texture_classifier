@@ -134,6 +134,15 @@ if __name__ == "__main__":
     test_split = args.test_split
     epochs = args.epochs
     weight_decay = args.weight_decay
+
+    if args.patch:
+        print("Using PATCH approach!!")
+    else:
+        print("Using STANDARD approach")
+
+    print(f"Epochs: {epochs}")
+    print(f"Learning rate: {lr}")
+    print(f"Weight decay: {weight_decay}")
     
     # Paths
     data_dir = "data/texture_windows"
