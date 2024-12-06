@@ -122,7 +122,7 @@ if __name__ == "__main__":
         log_filename = args.log_file
     else:
         timestamp = datetime.datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
-        log_filename = f"outputs/training-metrics-{timestamp}.log"
+        log_filename = f"slurm_jobs/outputs/training-metrics-{timestamp}.log"
     
     sys.stdout = Logger(log_filename)
 
