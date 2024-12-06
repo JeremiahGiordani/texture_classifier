@@ -95,7 +95,6 @@ if __name__ == "__main__":
     parser.add_argument("--epochs", type=int, default=10, help="Number of epochs to train")
     parser.add_argument("--test-split", type=float, default=0.2, help="Fraction of data to use as test set")
     parser.add_argument("--weight-decay", type=float, default=1e-4, help="Weight decay (L2 regularization)")
-    parser.add_argument("--early-stop-patience", type=int, default=5, help="Early stopping patience in epochs")
     args = parser.parse_args()
 
     # Hyperparameters
@@ -106,7 +105,6 @@ if __name__ == "__main__":
     test_split = args.test_split
     epochs = args.epochs
     weight_decay = args.weight_decay
-    patience = args.early_stop_patience
     
     # Paths
     data_dir = "data/texture_windows"
@@ -180,7 +178,6 @@ if __name__ == "__main__":
     optimizer = optim.Adam(model.parameters(), lr=lr, weight_decay=weight_decay)
     
     best_test_acc = 0.0
-    epochs_no_improve = 0
     
     for epoch in range(epochs):
         print(f"Epoch [{epoch+1}/{epochs}]")
@@ -199,14 +196,7 @@ if __name__ == "__main__":
             best_test_acc = test_acc
             torch.save(model.state_dict(), save_path)
             print("Model saved.")
-            epochs_no_improve = 0
-        else:
-            epochs_no_improve += 1
-        
-        # Early stopping check
-        if epochs_no_improve >= patience:
-            print("Early stopping triggered due to no improvement in test accuracy.")
-            break
+
 
     print("Training complete.")
     print(f"Best Test Acc: {best_test_acc:.2f}%")
