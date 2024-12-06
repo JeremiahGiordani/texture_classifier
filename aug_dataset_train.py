@@ -97,11 +97,12 @@ if __name__ == "__main__":
     parser.add_argument("--test-split", type=float, default=0.2, help="Fraction of data to use as test set")
     parser.add_argument("--weight-decay", type=float, default=1e-4, help="Weight decay (L2 regularization)")
     parser.add_argument("--patch", action='store_true', help="Use patch-and-shuffle approach if set")
+    parser.add_argument("--learning-rate", type=float, default=0.001, help="Learning rate for the optimizer")  # Added flag for learning rate
     args = parser.parse_args()
 
     # Hyperparameters
     batch_size = 32
-    lr = 0.001
+    lr = args.learning_rate  # Use the learning rate from the flag
     num_classes = 4
     base_size = 128
     test_split = args.test_split
