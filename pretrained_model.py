@@ -11,5 +11,8 @@ def get_pretrained_model(num_classes=4):
     model.load_state_dict(weights)
     # Replace the final layer
     in_features = model.fc.in_features
-    model.fc = nn.Linear(in_features, num_classes)
+    model.fc = nn.Sequential(
+        nn.Dropout(p=0.5),
+        nn.Linear(in_features, num_classes)
+    )
     return model

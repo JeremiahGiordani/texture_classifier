@@ -47,7 +47,6 @@ def train_epoch(model, train_loader, criterion, optimizer, device, num_classes):
         total += labels.size(0)
         correct += predicted.eq(labels).sum().item()
         
-        # Per-class counts
         for lbl, pred in zip(labels, predicted):
             total_per_class[lbl.item()] += 1
             if pred.item() == lbl.item():
@@ -80,7 +79,6 @@ def test_epoch(model, test_loader, criterion, device, num_classes):
             total += labels.size(0)
             correct += predicted.eq(labels).sum().item()
             
-            # Per-class counts
             for lbl, pred in zip(labels, predicted):
                 total_per_class[lbl.item()] += 1
                 if pred.item() == lbl.item():
@@ -96,6 +94,8 @@ if __name__ == "__main__":
     parser.add_argument("--pretrained", action='store_true', help="Use pretrained model if set")
     parser.add_argument("--epochs", type=int, default=10, help="Number of epochs to train")
     parser.add_argument("--test-split", type=float, default=0.2, help="Fraction of data to use as test set")
+    parser.add_argument("--weight-decay", type=float, default=1e-4, help="Weight decay (L2 regularization)")
+    parser.add_argument("--early-stop-patience", type=int, default=5, help="Early stopping patience in epochs")
     args = parser.parse_args()
 
     # Hyperparameters
@@ -105,13 +105,14 @@ if __name__ == "__main__":
     base_size = 128
     test_split = args.test_split
     epochs = args.epochs
+    weight_decay = args.weight_decay
+    patience = args.early_stop_patience
     
     # Paths
     data_dir = "data/texture_windows"
     csv_path = "data/texture_windows-labels.csv"
     save_path = "model.pth"
     
-    # Base resizing transform
     base_resize_transform = transforms.Resize((base_size, base_size))
     
     full_dataset = TextureWindowDataset(csv_path=csv_path, images_dir=data_dir, transform=base_resize_transform)
@@ -176,9 +177,11 @@ if __name__ == "__main__":
         model = SimpleCNN(num_classes=num_classes).to(device)
     
     criterion = nn.CrossEntropyLoss()
-    optimizer = optim.Adam(model.parameters(), lr=lr)
+    optimizer = optim.Adam(model.parameters(), lr=lr, weight_decay=weight_decay)
     
     best_test_acc = 0.0
+    epochs_no_improve = 0
+    
     for epoch in range(epochs):
         print(f"Epoch [{epoch+1}/{epochs}]")
         train_loss, train_acc, train_class_acc = train_epoch(model, train_loader, criterion, optimizer, device, num_classes)
@@ -196,6 +199,14 @@ if __name__ == "__main__":
             best_test_acc = test_acc
             torch.save(model.state_dict(), save_path)
             print("Model saved.")
+            epochs_no_improve = 0
+        else:
+            epochs_no_improve += 1
+        
+        # Early stopping check
+        if epochs_no_improve >= patience:
+            print("Early stopping triggered due to no improvement in test accuracy.")
+            break
 
     print("Training complete.")
     print(f"Best Test Acc: {best_test_acc:.2f}%")

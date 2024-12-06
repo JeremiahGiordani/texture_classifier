@@ -1,10 +1,10 @@
+import torch
 import torch.nn as nn
 import torch.nn.functional as F
 
 class SimpleCNN(nn.Module):
     def __init__(self, num_classes=4):
         super(SimpleCNN, self).__init__()
-        # A simple CNN architecture (can be modified or replaced by more complex models)
         self.features = nn.Sequential(
             nn.Conv2d(3, 16, kernel_size=3, stride=1, padding=1),
             nn.ReLU(inplace=True),
@@ -20,8 +20,10 @@ class SimpleCNN(nn.Module):
         )
         
         self.classifier = nn.Sequential(
+            nn.Dropout(p=0.5),  # Added dropout
             nn.Linear(64*4*4, 128),
             nn.ReLU(inplace=True),
+            nn.Dropout(p=0.5),  # Another dropout layer
             nn.Linear(128, num_classes)
         )
 
