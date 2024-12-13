@@ -2,7 +2,7 @@ import os
 import torch
 from PIL import Image
 import torchvision.transforms as transforms
-from model import SimpleCNN
+from models.model import SimpleCNN
 
 def load_model(model_path, device, num_classes=4):
     model = SimpleCNN(num_classes=num_classes)
@@ -22,7 +22,7 @@ if __name__ == "__main__":
         transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225])
     ])
     
-    # Example inference on a single image
+    # Inference on a single image
     test_image_path = "data/texture_windows/img_001-003.tiff"
     image = Image.open(test_image_path).convert("RGB")
     input_tensor = transform(image).unsqueeze(0).to(device)

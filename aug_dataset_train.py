@@ -5,15 +5,15 @@ import torch.optim as optim
 import torch.nn as nn
 from torch.utils.data import DataLoader, random_split, ConcatDataset
 import torchvision.transforms as transforms
-from dataset import TextureWindowDataset
-from model import SimpleCNN
-from pretrained_model import get_pretrained_model
+from dataset.dataset import TextureWindowDataset
+from models.model import SimpleCNN
+from models.pretrained_model import get_pretrained_model
 from tqdm import tqdm
-from augmentations import make_augmentations
+from utils.augmentations import make_augmentations
 from patch import PatchShuffleTransform
 import datetime
 import sys
-from focal_loss import FocalLoss
+from utils.focal_loss import FocalLoss
 
 # Redirect print output to a log file
 class Logger:

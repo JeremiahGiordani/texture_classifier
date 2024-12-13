@@ -4,3 +4,5 @@ Pillow
 pandas
 numpy
 tqdm
+matplotlib
+ipykernel

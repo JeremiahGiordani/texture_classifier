@@ -1,0 +1,377 @@
+/scratch/network/jg0037/env/lib64/python3.11/site-packages/torch/utils/data/dataloader.py:617: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 1, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(
+/home/jg0037/texture_classifier/pretrained_model.py:9: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  weights = torch.load(pretrained_weights)
+Using STANDARD approach
+Epochs: 30
+Learning rate: 5e-05
+Weight decay: 0.001
+Using device: cuda
+Using Cross Entropy Loss
+Epoch [1/30]
+Training:   0%|          | 0/48 [00:00<?, ?it/s]Training:   2%|▏         | 1/48 [00:03<02:22,  3.02s/it]Training:   8%|▊         | 4/48 [00:03<00:26,  1.63it/s]Training:  15%|█▍        | 7/48 [00:03<00:12,  3.19it/s]Training:  21%|██        | 10/48 [00:03<00:07,  5.06it/s]Training:  27%|██▋       | 13/48 [00:03<00:04,  7.24it/s]Training:  33%|███▎      | 16/48 [00:03<00:03,  9.57it/s]Training:  40%|███▉      | 19/48 [00:03<00:02, 11.93it/s]Training:  46%|████▌     | 22/48 [00:03<00:01, 14.26it/s]Training:  52%|█████▏    | 25/48 [00:04<00:01, 15.32it/s]Training:  58%|█████▊    | 28/48 [00:04<00:01, 17.28it/s]Training:  65%|██████▍   | 31/48 [00:04<00:01, 15.93it/s]Training:  71%|███████   | 34/48 [00:04<00:00, 15.58it/s]Training:  77%|███████▋  | 37/48 [00:04<00:00, 16.49it/s]Training:  83%|████████▎ | 40/48 [00:04<00:00, 17.95it/s]Training:  88%|████████▊ | 42/48 [00:05<00:00, 15.91it/s]Training:  92%|█████████▏| 44/48 [00:05<00:00, 16.17it/s]Training: 100%|██████████| 48/48 [00:05<00:00, 20.55it/s]                                                         Testing:   0%|          | 0/12 [00:00<?, ?it/s]Testing:   8%|▊         | 1/12 [00:02<00:27,  2.48s/it]Testing:  42%|████▏     | 5/12 [00:02<00:02,  2.51it/s]Testing:  67%|██████▋   | 8/12 [00:02<00:00,  4.38it/s]Testing:  92%|█████████▏| 11/12 [00:02<00:00,  6.29it/s]                                                        Train Loss: 0.6385 | Train Acc: 75.94%
+  Train Class 0 Acc: 75.91%
+  Train Class 1 Acc: 66.76%
+  Train Class 2 Acc: 63.60%
+  Train Class 3 Acc: 87.87%
+Test Loss: 1.0152 | Test Acc: 58.29%
+  Test Class 0 Acc: 92.16%
+  Test Class 1 Acc: 31.93%
+  Test Class 2 Acc: 61.03%
+  Test Class 3 Acc: 73.53%
+Average Accuracy: 58.29%
+Model saved.
+Epoch [2/30]
+Training:   0%|          | 0/48 [00:00<?, ?it/s]Training:   2%|▏         | 1/48 [00:02<02:00,  2.57s/it]Training:   4%|▍         | 2/48 [00:02<00:51,  1.12s/it]Training:  10%|█         | 5/48 [00:02<00:15,  2.73it/s]Training:  17%|█▋        | 8/48 [00:03<00:08,  4.94it/s]Training:  23%|██▎       | 11/48 [00:03<00:05,  7.36it/s]Training:  27%|██▋       | 13/48 [00:03<00:04,  8.62it/s]Training:  33%|███▎      | 16/48 [00:03<00:02, 11.33it/s]Training:  40%|███▉      | 19/48 [00:03<00:02, 13.80it/s]Training:  46%|████▌     | 22/48 [00:03<00:01, 14.55it/s]Training:  52%|█████▏    | 25/48 [00:03<00:01, 15.27it/s]Training:  56%|█████▋    | 27/48 [00:03<00:01, 16.10it/s]Training:  60%|██████    | 29/48 [00:04<00:01, 15.84it/s]Training:  67%|██████▋   | 32/48 [00:04<00:00, 17.06it/s]Training:  71%|███████   | 34/48 [00:04<00:00, 15.44it/s]Training:  75%|███████▌  | 36/48 [00:04<00:00, 15.32it/s]Training:  79%|███████▉  | 38/48 [00:04<00:00, 15.93it/s]Training:  83%|████████▎ | 40/48 [00:04<00:00, 15.71it/s]Training:  88%|████████▊ | 42/48 [00:04<00:00, 16.20it/s]Training:  94%|█████████▍| 45/48 [00:05<00:00, 18.00it/s]                                                         Testing:   0%|          | 0/12 [00:00<?, ?it/s]Testing:   8%|▊         | 1/12 [00:02<00:27,  2.46s/it]Testing:  25%|██▌       | 3/12 [00:02<00:06,  1.46it/s]Testing:  58%|█████▊    | 7/12 [00:02<00:01,  4.11it/s]Testing:  75%|███████▌  | 9/12 [00:02<00:00,  5.52it/s]Testing: 100%|██████████| 12/12 [00:02<00:00,  8.29it/s]                                                        Train Loss: 0.0957 | Train Acc: 98.28%
+  Train Class 0 Acc: 98.32%
+  Train Class 1 Acc: 96.47%
+  Train Class 2 Acc: 98.16%
+  Train Class 3 Acc: 99.45%
+Test Loss: 0.7062 | Test Acc: 71.12%
+  Test Class 0 Acc: 68.63%
+  Test Class 1 Acc: 68.91%
+  Test Class 2 Acc: 61.03%
+  Test Class 3 Acc: 97.06%
+Average Accuracy: 64.71%
+Model saved.
+Epoch [3/30]
+Training:   0%|          | 0/48 [00:00<?, ?it/s]Training:   2%|▏         | 1/48 [00:02<02:01,  2.59s/it]Training:   6%|▋         | 3/48 [00:02<00:32,  1.39it/s]Training:  10%|█         | 5/48 [00:02<00:16,  2.66it/s]Training:  15%|█▍        | 7/48 [00:02<00:09,  4.10it/s]Training:  21%|██        | 10/48 [00:03<00:05,  6.54it/s]Training:  27%|██▋       | 13/48 [00:03<00:03,  9.23it/s]Training:  31%|███▏      | 15/48 [00:03<00:03, 10.59it/s]Training:  35%|███▌      | 17/48 [00:03<00:02, 11.32it/s]Training:  40%|███▉      | 19/48 [00:03<00:02, 11.82it/s]Training:  46%|████▌     | 22/48 [00:03<00:01, 14.24it/s]Training:  52%|█████▏    | 25/48 [00:03<00:01, 15.10it/s]Training:  58%|█████▊    | 28/48 [00:04<00:01, 17.11it/s]Training:  62%|██████▎   | 30/48 [00:04<00:01, 14.91it/s]Training:  67%|██████▋   | 32/48 [00:04<00:01, 15.29it/s]Training:  71%|███████   | 34/48 [00:04<00:00, 15.20it/s]Training:  77%|███████▋  | 37/48 [00:04<00:00, 17.42it/s]Training:  83%|████████▎ | 40/48 [00:04<00:00, 19.21it/s]Training:  88%|████████▊ | 42/48 [00:04<00:00, 17.98it/s]Training:  92%|█████████▏| 44/48 [00:05<00:00, 17.63it/s]Training: 100%|██████████| 48/48 [00:05<00:00, 23.05it/s]                                                         Testing:   0%|          | 0/12 [00:00<?, ?it/s]Testing:   8%|▊         | 1/12 [00:02<00:27,  2.47s/it]Testing:  33%|███▎      | 4/12 [00:02<00:04,  1.98it/s]Testing:  58%|█████▊    | 7/12 [00:02<00:01,  3.96it/s]Testing:  83%|████████▎ | 10/12 [00:02<00:00,  5.82it/s]                                                        Train Loss: 0.0330 | Train Acc: 99.74%
+  Train Class 0 Acc: 100.00%
+  Train Class 1 Acc: 99.71%
+  Train Class 2 Acc: 98.90%
+  Train Class 3 Acc: 100.00%
+Test Loss: 0.8665 | Test Acc: 68.18%
+  Test Class 0 Acc: 74.51%
+  Test Class 1 Acc: 59.66%
+  Test Class 2 Acc: 66.91%
+  Test Class 3 Acc: 80.88%
+Average Accuracy: 65.86%
+Epoch [4/30]
+Training:   0%|          | 0/48 [00:00<?, ?it/s]Training:   2%|▏         | 1/48 [00:02<01:59,  2.53s/it]Training:   8%|▊         | 4/48 [00:02<00:22,  1.94it/s]Training:  15%|█▍        | 7/48 [00:02<00:10,  3.81it/s]Training:  19%|█▉        | 9/48 [00:02<00:07,  5.13it/s]Training:  23%|██▎       | 11/48 [00:03<00:05,  6.75it/s]Training:  27%|██▋       | 13/48 [00:03<00:04,  8.20it/s]Training:  33%|███▎      | 16/48 [00:03<00:02, 11.20it/s]Training:  38%|███▊      | 18/48 [00:03<00:02, 11.48it/s]Training:  44%|████▍     | 21/48 [00:03<00:02, 12.92it/s]Training:  50%|█████     | 24/48 [00:03<00:01, 15.47it/s]Training:  54%|█████▍    | 26/48 [00:03<00:01, 14.62it/s]Training:  60%|██████    | 29/48 [00:04<00:01, 14.69it/s]Training:  67%|██████▋   | 32/48 [00:04<00:00, 17.01it/s]Training:  71%|███████   | 34/48 [00:04<00:00, 16.13it/s]Training:  77%|███████▋  | 37/48 [00:04<00:00, 15.78it/s]Training:  83%|████████▎ | 40/48 [00:04<00:00, 18.01it/s]Training:  88%|████████▊ | 42/48 [00:04<00:00, 16.01it/s]Training:  94%|█████████▍| 45/48 [00:05<00:00, 17.02it/s]                                                         Testing:   0%|          | 0/12 [00:00<?, ?it/s]Testing:   8%|▊         | 1/12 [00:02<00:27,  2.49s/it]Testing:  33%|███▎      | 4/12 [00:02<00:04,  1.98it/s]Testing:  58%|█████▊    | 7/12 [00:02<00:01,  3.98it/s]Testing:  83%|████████▎ | 10/12 [00:02<00:00,  5.84it/s]                                                        Train Loss: 0.0216 | Train Acc: 99.67%
+  Train Class 0 Acc: 99.16%
+  Train Class 1 Acc: 100.00%
+  Train Class 2 Acc: 99.63%
+  Train Class 3 Acc: 99.82%
+Test Loss: 0.7498 | Test Acc: 69.25%
+  Test Class 0 Acc: 68.63%
+  Test Class 1 Acc: 61.34%
+  Test Class 2 Acc: 70.59%
+  Test Class 3 Acc: 80.88%
+Average Accuracy: 66.71%
+Epoch [5/30]
+Training:   0%|          | 0/48 [00:00<?, ?it/s]Training:   2%|▏         | 1/48 [00:02<01:59,  2.55s/it]Training:   8%|▊         | 4/48 [00:02<00:22,  1.93it/s]Training:  15%|█▍        | 7/48 [00:02<00:10,  3.78it/s]Training:  19%|█▉        | 9/48 [00:02<00:07,  5.15it/s]Training:  25%|██▌       | 12/48 [00:03<00:04,  7.76it/s]Training:  31%|███▏      | 15/48 [00:03<00:03,  9.40it/s]Training:  35%|███▌      | 17/48 [00:03<00:02, 10.39it/s]Training:  40%|███▉      | 19/48 [00:03<00:02, 11.48it/s]Training:  44%|████▍     | 21/48 [00:03<00:02, 12.35it/s]Training:  50%|█████     | 24/48 [00:03<00:01, 15.07it/s]Training:  54%|█████▍    | 26/48 [00:03<00:01, 13.75it/s]Training:  60%|██████    | 29/48 [00:04<00:01, 14.84it/s]Training:  65%|██████▍   | 31/48 [00:04<00:01, 13.93it/s]Training:  71%|███████   | 34/48 [00:04<00:00, 15.19it/s]Training:  77%|███████▋  | 37/48 [00:04<00:00, 17.11it/s]Training:  81%|████████▏ | 39/48 [00:04<00:00, 15.15it/s]Training:  88%|████████▊ | 42/48 [00:04<00:00, 17.07it/s]Training:  92%|█████████▏| 44/48 [00:05<00:00, 17.71it/s]Training:  96%|█████████▌| 46/48 [00:05<00:00, 17.95it/s]                                                         Testing:   0%|          | 0/12 [00:00<?, ?it/s]Testing:   8%|▊         | 1/12 [00:02<00:27,  2.49s/it]Testing:  33%|███▎      | 4/12 [00:02<00:04,  1.99it/s]Testing:  58%|█████▊    | 7/12 [00:02<00:01,  3.95it/s]Testing:  83%|████████▎ | 10/12 [00:02<00:00,  5.89it/s]                                                        Train Loss: 0.0163 | Train Acc: 99.93%
+  Train Class 0 Acc: 100.00%
+  Train Class 1 Acc: 99.71%
+  Train Class 2 Acc: 100.00%
+  Train Class 3 Acc: 100.00%
+Test Loss: 0.7486 | Test Acc: 67.91%
+  Test Class 0 Acc: 82.35%
+  Test Class 1 Acc: 55.46%
+  Test Class 2 Acc: 69.85%
+  Test Class 3 Acc: 75.00%
+Average Accuracy: 66.95%
+Epoch [6/30]
+Training:   0%|          | 0/48 [00:00<?, ?it/s]Training:   2%|▏         | 1/48 [00:02<02:01,  2.58s/it]Training:   8%|▊         | 4/48 [00:02<00:23,  1.91it/s]Training:  15%|█▍        | 7/48 [00:02<00:11,  3.65it/s]Training:  21%|██        | 10/48 [00:03<00:06,  5.76it/s]Training:  25%|██▌       | 12/48 [00:03<00:05,  6.94it/s]Training:  29%|██▉       | 14/48 [00:03<00:03,  8.57it/s]Training:  33%|███▎      | 16/48 [00:03<00:03,  9.95it/s]Training:  38%|███▊      | 18/48 [00:03<00:02, 11.53it/s]Training:  42%|████▏     | 20/48 [00:03<00:02, 12.66it/s]Training:  46%|████▌     | 22/48 [00:03<00:01, 13.16it/s]Training:  50%|█████     | 24/48 [00:03<00:01, 14.07it/s]Training:  54%|█████▍    | 26/48 [00:04<00:01, 14.57it/s]Training:  60%|██████    | 29/48 [00:04<00:01, 14.86it/s]Training:  65%|██████▍   | 31/48 [00:04<00:01, 15.56it/s]Training:  69%|██████▉   | 33/48 [00:04<00:00, 15.77it/s]Training:  73%|███████▎  | 35/48 [00:04<00:00, 15.48it/s]Training:  79%|███████▉  | 38/48 [00:04<00:00, 16.30it/s]Training:  83%|████████▎ | 40/48 [00:04<00:00, 16.16it/s]Training:  90%|████████▉ | 43/48 [00:05<00:00, 17.74it/s]Training:  96%|█████████▌| 46/48 [00:05<00:00, 19.89it/s]                                                         Testing:   0%|          | 0/12 [00:00<?, ?it/s]Testing:   8%|▊         | 1/12 [00:02<00:27,  2.50s/it]Testing:  33%|███▎      | 4/12 [00:02<00:04,  2.00it/s]Testing:  50%|█████     | 6/12 [00:02<00:01,  3.26it/s]Testing:  75%|███████▌  | 9/12 [00:02<00:00,  5.49it/s]                                                       Train Loss: 0.0119 | Train Acc: 99.87%
+  Train Class 0 Acc: 100.00%
+  Train Class 1 Acc: 100.00%
+  Train Class 2 Acc: 99.26%
+  Train Class 3 Acc: 100.00%
+Test Loss: 0.8833 | Test Acc: 67.65%
+  Test Class 0 Acc: 78.43%
+  Test Class 1 Acc: 59.66%
+  Test Class 2 Acc: 66.91%
+  Test Class 3 Acc: 75.00%
+Average Accuracy: 67.07%
+Epoch [7/30]
+Training:   0%|          | 0/48 [00:00<?, ?it/s]Training:   2%|▏         | 1/48 [00:02<01:58,  2.52s/it]Training:   8%|▊         | 4/48 [00:02<00:22,  1.95it/s]Training:  15%|█▍        | 7/48 [00:02<00:10,  3.84it/s]Training:  19%|█▉        | 9/48 [00:02<00:07,  5.18it/s]Training:  25%|██▌       | 12/48 [00:03<00:04,  7.66it/s]Training:  29%|██▉       | 14/48 [00:03<00:04,  8.36it/s]Training:  35%|███▌      | 17/48 [00:03<00:02, 10.86it/s]Training:  40%|███▉      | 19/48 [00:03<00:02, 11.84it/s]Training:  44%|████▍     | 21/48 [00:03<00:02, 13.14it/s]Training:  48%|████▊     | 23/48 [00:03<00:01, 13.84it/s]Training:  52%|█████▏    | 25/48 [00:03<00:01, 14.41it/s]Training:  56%|█████▋    | 27/48 [00:03<00:01, 14.55it/s]Training:  60%|██████    | 29/48 [00:04<00:01, 14.58it/s]Training:  67%|██████▋   | 32/48 [00:04<00:00, 17.18it/s]Training:  71%|███████   | 34/48 [00:04<00:00, 14.85it/s]Training:  75%|███████▌  | 36/48 [00:04<00:00, 15.28it/s]Training:  79%|███████▉  | 38/48 [00:04<00:00, 15.98it/s]Training:  83%|████████▎ | 40/48 [00:04<00:00, 15.85it/s]Training:  88%|████████▊ | 42/48 [00:04<00:00, 16.65it/s]Training:  92%|█████████▏| 44/48 [00:05<00:00, 16.64it/s]Training:  98%|█████████▊| 47/48 [00:05<00:00, 20.06it/s]                                                         Testing:   0%|          | 0/12 [00:00<?, ?it/s]Testing:   8%|▊         | 1/12 [00:02<00:27,  2.50s/it]Testing:  33%|███▎      | 4/12 [00:02<00:04,  1.97it/s]Testing:  67%|██████▋   | 8/12 [00:02<00:00,  4.45it/s]Testing:  83%|████████▎ | 10/12 [00:02<00:00,  5.64it/s]                                                        Train Loss: 0.0106 | Train Acc: 99.93%
+  Train Class 0 Acc: 100.00%
+  Train Class 1 Acc: 100.00%
+  Train Class 2 Acc: 100.00%
+  Train Class 3 Acc: 99.82%
+Test Loss: 0.8957 | Test Acc: 67.91%
+  Test Class 0 Acc: 68.63%
+  Test Class 1 Acc: 65.55%
+  Test Class 2 Acc: 66.18%
+  Test Class 3 Acc: 75.00%
+Average Accuracy: 67.19%
+Epoch [8/30]
+Training:   0%|          | 0/48 [00:00<?, ?it/s]Training:   2%|▏         | 1/48 [00:02<01:58,  2.53s/it]Training:   8%|▊         | 4/48 [00:02<00:22,  1.95it/s]Training:  15%|█▍        | 7/48 [00:02<00:10,  3.83it/s]Training:  19%|█▉        | 9/48 [00:02<00:07,  5.14it/s]Training:  23%|██▎       | 11/48 [00:03<00:05,  6.55it/s]Training:  29%|██▉       | 14/48 [00:03<00:03,  9.02it/s]Training:  33%|███▎      | 16/48 [00:03<00:03, 10.32it/s]Training:  38%|███▊      | 18/48 [00:03<00:02, 10.98it/s]Training:  44%|████▍     | 21/48 [00:03<00:01, 13.72it/s]Training:  48%|████▊     | 23/48 [00:03<00:01, 13.01it/s]Training:  54%|█████▍    | 26/48 [00:03<00:01, 14.19it/s]Training:  58%|█████▊    | 28/48 [00:04<00:01, 14.80it/s]Training:  65%|██████▍   | 31/48 [00:04<00:01, 16.28it/s]Training:  69%|██████▉   | 33/48 [00:04<00:00, 15.76it/s]Training:  73%|███████▎  | 35/48 [00:04<00:00, 15.46it/s]Training:  79%|███████▉  | 38/48 [00:04<00:00, 16.26it/s]Training:  85%|████████▌ | 41/48 [00:04<00:00, 16.97it/s]Training:  90%|████████▉ | 43/48 [00:04<00:00, 16.80it/s]Training:  96%|█████████▌| 46/48 [00:05<00:00, 18.35it/s]                                                         Testing:   0%|          | 0/12 [00:00<?, ?it/s]Testing:   8%|▊         | 1/12 [00:02<00:26,  2.45s/it]Testing:  25%|██▌       | 3/12 [00:02<00:06,  1.49it/s]Testing:  50%|█████     | 6/12 [00:02<00:01,  3.50it/s]Testing:  75%|███████▌  | 9/12 [00:02<00:00,  5.75it/s]Testing: 100%|██████████| 12/12 [00:02<00:00,  8.45it/s]                                                        Train Loss: 0.0060 | Train Acc: 100.00%
+  Train Class 0 Acc: 100.00%
+  Train Class 1 Acc: 100.00%
+  Train Class 2 Acc: 100.00%
+  Train Class 3 Acc: 100.00%
+Test Loss: 0.8937 | Test Acc: 68.98%
+  Test Class 0 Acc: 72.55%
+  Test Class 1 Acc: 64.71%
+  Test Class 2 Acc: 68.38%
+  Test Class 3 Acc: 75.00%
+Average Accuracy: 67.41%
+Epoch [9/30]
+Training:   0%|          | 0/48 [00:00<?, ?it/s]Training:   2%|▏         | 1/48 [00:02<01:57,  2.50s/it]Training:   6%|▋         | 3/48 [00:02<00:30,  1.46it/s]Training:  10%|█         | 5/48 [00:02<00:15,  2.78it/s]Training:  17%|█▋        | 8/48 [00:02<00:07,  5.09it/s]Training:  21%|██        | 10/48 [00:02<00:05,  6.61it/s]Training:  27%|██▋       | 13/48 [00:03<00:03,  8.75it/s]Training:  33%|███▎      | 16/48 [00:03<00:02, 11.43it/s]Training:  38%|███▊      | 18/48 [00:03<00:02, 11.17it/s]Training:  42%|████▏     | 20/48 [00:03<00:02, 12.29it/s]Training:  48%|████▊     | 23/48 [00:03<00:01, 13.98it/s]Training:  52%|█████▏    | 25/48 [00:03<00:01, 14.41it/s]Training:  56%|█████▋    | 27/48 [00:04<00:01, 14.48it/s]Training:  60%|██████    | 29/48 [00:04<00:01, 14.74it/s]Training:  65%|██████▍   | 31/48 [00:04<00:01, 14.89it/s]Training:  71%|███████   | 34/48 [00:04<00:00, 16.75it/s]Training:  77%|███████▋  | 37/48 [00:04<00:00, 17.15it/s]Training:  81%|████████▏ | 39/48 [00:04<00:00, 16.31it/s]Training:  85%|████████▌ | 41/48 [00:04<00:00, 15.95it/s]Training:  92%|█████████▏| 44/48 [00:04<00:00, 18.25it/s]Training:  96%|█████████▌| 46/48 [00:05<00:00, 18.44it/s]                                                         Testing:   0%|          | 0/12 [00:00<?, ?it/s]Testing:   8%|▊         | 1/12 [00:02<00:27,  2.47s/it]Testing:  25%|██▌       | 3/12 [00:02<00:06,  1.47it/s]Testing:  50%|█████     | 6/12 [00:02<00:01,  3.51it/s]Testing:  75%|███████▌  | 9/12 [00:02<00:00,  5.73it/s]Testing:  92%|█████████▏| 11/12 [00:02<00:00,  7.33it/s]                                                        Train Loss: 0.0048 | Train Acc: 99.93%
+  Train Class 0 Acc: 100.00%
+  Train Class 1 Acc: 100.00%
+  Train Class 2 Acc: 100.00%
+  Train Class 3 Acc: 99.82%
+Test Loss: 0.9453 | Test Acc: 67.11%
+  Test Class 0 Acc: 74.51%
+  Test Class 1 Acc: 63.87%
+  Test Class 2 Acc: 63.24%
+  Test Class 3 Acc: 75.00%
+Average Accuracy: 67.38%
+Epoch [10/30]
+Training:   0%|          | 0/48 [00:00<?, ?it/s]Training:   2%|▏         | 1/48 [00:02<01:59,  2.55s/it]Training:   8%|▊         | 4/48 [00:02<00:22,  1.93it/s]Training:  15%|█▍        | 7/48 [00:02<00:10,  3.80it/s]Training:  21%|██        | 10/48 [00:02<00:06,  5.86it/s]Training:  27%|██▋       | 13/48 [00:03<00:04,  7.79it/s]Training:  33%|███▎      | 16/48 [00:03<00:03, 10.30it/s]Training:  40%|███▉      | 19/48 [00:03<00:02, 11.37it/s]Training:  44%|████▍     | 21/48 [00:03<00:02, 11.94it/s]Training:  48%|████▊     | 23/48 [00:03<00:01, 13.27it/s]Training:  52%|█████▏    | 25/48 [00:03<00:01, 13.21it/s]Training:  58%|█████▊    | 28/48 [00:03<00:01, 15.99it/s]Training:  62%|██████▎   | 30/48 [00:04<00:01, 15.23it/s]Training:  67%|██████▋   | 32/48 [00:04<00:01, 14.77it/s]Training:  71%|███████   | 34/48 [00:04<00:00, 15.14it/s]Training:  77%|███████▋  | 37/48 [00:04<00:00, 15.98it/s]Training:  83%|████████▎ | 40/48 [00:04<00:00, 18.24it/s]Training:  88%|████████▊ | 42/48 [00:04<00:00, 17.18it/s]Training:  94%|█████████▍| 45/48 [00:05<00:00, 16.61it/s]                                                         Testing:   0%|          | 0/12 [00:00<?, ?it/s]Testing:   8%|▊         | 1/12 [00:02<00:27,  2.47s/it]Testing:  33%|███▎      | 4/12 [00:02<00:04,  1.99it/s]Testing:  58%|█████▊    | 7/12 [00:02<00:01,  3.99it/s]Testing:  83%|████████▎ | 10/12 [00:02<00:00,  5.81it/s]                                                        Train Loss: 0.0029 | Train Acc: 100.00%
+  Train Class 0 Acc: 100.00%
+  Train Class 1 Acc: 100.00%
+  Train Class 2 Acc: 100.00%
+  Train Class 3 Acc: 100.00%
+Test Loss: 0.8694 | Test Acc: 69.52%
+  Test Class 0 Acc: 72.55%
+  Test Class 1 Acc: 63.87%
+  Test Class 2 Acc: 70.59%
+  Test Class 3 Acc: 75.00%
+Average Accuracy: 67.59%
+Epoch [11/30]
+Training:   0%|          | 0/48 [00:00<?, ?it/s]Training:   2%|▏         | 1/48 [00:02<02:00,  2.56s/it]Training:   6%|▋         | 3/48 [00:02<00:32,  1.40it/s]Training:  12%|█▎        | 6/48 [00:02<00:12,  3.30it/s]Training:  19%|█▉        | 9/48 [00:02<00:07,  5.44it/s]Training:  23%|██▎       | 11/48 [00:03<00:05,  6.83it/s]Training:  29%|██▉       | 14/48 [00:03<00:03,  9.17it/s]Training:  35%|███▌      | 17/48 [00:03<00:02, 11.43it/s]Training:  40%|███▉      | 19/48 [00:03<00:02, 12.75it/s]Training:  44%|████▍     | 21/48 [00:03<00:02, 12.62it/s]Training:  48%|████▊     | 23/48 [00:03<00:01, 13.77it/s]Training:  52%|█████▏    | 25/48 [00:03<00:01, 14.58it/s]Training:  56%|█████▋    | 27/48 [00:04<00:01, 14.07it/s]Training:  62%|██████▎   | 30/48 [00:04<00:01, 15.74it/s]Training:  67%|██████▋   | 32/48 [00:04<00:01, 15.75it/s]Training:  71%|███████   | 34/48 [00:04<00:00, 15.61it/s]Training:  77%|███████▋  | 37/48 [00:04<00:00, 15.91it/s]Training:  81%|████████▏ | 39/48 [00:04<00:00, 16.20it/s]Training:  85%|████████▌ | 41/48 [00:04<00:00, 15.71it/s]Training:  92%|█████████▏| 44/48 [00:05<00:00, 16.51it/s]Training: 100%|██████████| 48/48 [00:05<00:00, 21.56it/s]                                                         Testing:   0%|          | 0/12 [00:00<?, ?it/s]Testing:   8%|▊         | 1/12 [00:02<00:27,  2.52s/it]Testing:  42%|████▏     | 5/12 [00:02<00:02,  2.46it/s]Testing:  75%|███████▌  | 9/12 [00:02<00:00,  4.71it/s]                                                       Train Loss: 0.0026 | Train Acc: 100.00%
+  Train Class 0 Acc: 100.00%
+  Train Class 1 Acc: 100.00%
+  Train Class 2 Acc: 100.00%
+  Train Class 3 Acc: 100.00%
+Test Loss: 0.9752 | Test Acc: 67.11%
+  Test Class 0 Acc: 74.51%
+  Test Class 1 Acc: 65.55%
+  Test Class 2 Acc: 61.76%
+  Test Class 3 Acc: 75.00%
+Average Accuracy: 67.55%
+Epoch [12/30]
+Training:   0%|          | 0/48 [00:00<?, ?it/s]Training:   2%|▏         | 1/48 [00:02<01:58,  2.52s/it]Training:   8%|▊         | 4/48 [00:02<00:22,  1.95it/s]Training:  15%|█▍        | 7/48 [00:02<00:11,  3.71it/s]Training:  21%|██        | 10/48 [00:02<00:06,  5.83it/s]Training:  25%|██▌       | 12/48 [00:03<00:04,  7.27it/s]Training:  29%|██▉       | 14/48 [00:03<00:03,  8.53it/s]Training:  33%|███▎      | 16/48 [00:03<00:03,  9.61it/s]Training:  40%|███▉      | 19/48 [00:03<00:02, 12.38it/s]Training:  44%|████▍     | 21/48 [00:03<00:02, 13.21it/s]Training:  48%|████▊     | 23/48 [00:03<00:01, 13.44it/s]Training:  52%|█████▏    | 25/48 [00:03<00:01, 13.73it/s]Training:  56%|█████▋    | 27/48 [00:04<00:01, 14.69it/s]Training:  60%|██████    | 29/48 [00:04<00:01, 15.19it/s]Training:  65%|██████▍   | 31/48 [00:04<00:01, 15.67it/s]Training:  69%|██████▉   | 33/48 [00:04<00:00, 15.20it/s]Training:  73%|███████▎  | 35/48 [00:04<00:00, 14.01it/s]Training:  79%|███████▉  | 38/48 [00:04<00:00, 15.93it/s]Training:  85%|████████▌ | 41/48 [00:04<00:00, 17.54it/s]Training:  90%|████████▉ | 43/48 [00:04<00:00, 16.51it/s]Training:  94%|█████████▍| 45/48 [00:05<00:00, 17.06it/s]                                                         Testing:   0%|          | 0/12 [00:00<?, ?it/s]Testing:   8%|▊         | 1/12 [00:02<00:26,  2.45s/it]Testing:  33%|███▎      | 4/12 [00:02<00:04,  1.98it/s]Testing:  67%|██████▋   | 8/12 [00:02<00:00,  4.58it/s]Testing:  92%|█████████▏| 11/12 [00:02<00:00,  6.45it/s]                                                        Train Loss: 0.0021 | Train Acc: 100.00%
+  Train Class 0 Acc: 100.00%
+  Train Class 1 Acc: 100.00%
+  Train Class 2 Acc: 100.00%
+  Train Class 3 Acc: 100.00%
+Test Loss: 0.8979 | Test Acc: 68.98%
+  Test Class 0 Acc: 82.35%
+  Test Class 1 Acc: 58.82%
+  Test Class 2 Acc: 69.85%
+  Test Class 3 Acc: 75.00%
+Average Accuracy: 67.67%
+Epoch [13/30]
+Training:   0%|          | 0/48 [00:00<?, ?it/s]Training:   2%|▏         | 1/48 [00:02<01:57,  2.51s/it]Training:   8%|▊         | 4/48 [00:02<00:22,  1.94it/s]Training:  12%|█▎        | 6/48 [00:02<00:13,  3.11it/s]Training:  19%|█▉        | 9/48 [00:02<00:07,  5.35it/s]Training:  25%|██▌       | 12/48 [00:03<00:04,  7.81it/s]Training:  29%|██▉       | 14/48 [00:03<00:03,  8.61it/s]Training:  35%|███▌      | 17/48 [00:03<00:02, 11.01it/s]Training:  42%|████▏     | 20/48 [00:03<00:02, 13.41it/s]Training:  46%|████▌     | 22/48 [00:03<00:02, 12.68it/s]Training:  52%|█████▏    | 25/48 [00:03<00:01, 14.01it/s]Training:  58%|█████▊    | 28/48 [00:03<00:01, 16.39it/s]Training:  62%|██████▎   | 30/48 [00:04<00:01, 15.60it/s]Training:  67%|██████▋   | 32/48 [00:04<00:00, 16.35it/s]Training:  71%|███████   | 34/48 [00:04<00:00, 15.63it/s]Training:  77%|███████▋  | 37/48 [00:04<00:00, 15.97it/s]Training:  81%|████████▏ | 39/48 [00:04<00:00, 16.23it/s]Training:  85%|████████▌ | 41/48 [00:04<00:00, 14.58it/s]Training:  92%|█████████▏| 44/48 [00:05<00:00, 16.07it/s]Training: 100%|██████████| 48/48 [00:05<00:00, 20.93it/s]                                                         Testing:   0%|          | 0/12 [00:00<?, ?it/s]Testing:   8%|▊         | 1/12 [00:02<00:26,  2.45s/it]Testing:  33%|███▎      | 4/12 [00:02<00:04,  2.00it/s]Testing:  58%|█████▊    | 7/12 [00:02<00:01,  3.98it/s]Testing:  75%|███████▌  | 9/12 [00:02<00:00,  5.38it/s]Testing: 100%|██████████| 12/12 [00:02<00:00,  8.15it/s]                                                        Train Loss: 0.0021 | Train Acc: 100.00%
+  Train Class 0 Acc: 100.00%
+  Train Class 1 Acc: 100.00%
+  Train Class 2 Acc: 100.00%
+  Train Class 3 Acc: 100.00%
+Test Loss: 0.9127 | Test Acc: 70.05%
+  Test Class 0 Acc: 72.55%
+  Test Class 1 Acc: 67.23%
+  Test Class 2 Acc: 69.12%
+  Test Class 3 Acc: 75.00%
+Average Accuracy: 67.85%
+Epoch [14/30]
+Training:   0%|          | 0/48 [00:00<?, ?it/s]Training:   2%|▏         | 1/48 [00:02<02:00,  2.55s/it]Training:   6%|▋         | 3/48 [00:02<00:32,  1.40it/s]Training:  12%|█▎        | 6/48 [00:02<00:12,  3.32it/s]Training:  17%|█▋        | 8/48 [00:02<00:08,  4.66it/s]Training:  23%|██▎       | 11/48 [00:03<00:05,  7.09it/s]Training:  27%|██▋       | 13/48 [00:03<00:04,  8.55it/s]Training:  33%|███▎      | 16/48 [00:03<00:02, 11.49it/s]Training:  38%|███▊      | 18/48 [00:03<00:02, 12.17it/s]Training:  42%|████▏     | 20/48 [00:03<00:02, 13.20it/s]Training:  46%|████▌     | 22/48 [00:03<00:01, 13.60it/s]Training:  50%|█████     | 24/48 [00:03<00:01, 14.39it/s]Training:  54%|█████▍    | 26/48 [00:03<00:01, 14.63it/s]Training:  58%|█████▊    | 28/48 [00:04<00:01, 14.55it/s]Training:  65%|██████▍   | 31/48 [00:04<00:01, 16.41it/s]Training:  69%|██████▉   | 33/48 [00:04<00:00, 15.97it/s]Training:  73%|███████▎  | 35/48 [00:04<00:00, 15.05it/s]Training:  77%|███████▋  | 37/48 [00:04<00:00, 15.20it/s]Training:  81%|████████▏ | 39/48 [00:04<00:00, 16.16it/s]Training:  85%|████████▌ | 41/48 [00:04<00:00, 15.91it/s]Training:  90%|████████▉ | 43/48 [00:05<00:00, 16.59it/s]Training:  98%|█████████▊| 47/48 [00:05<00:00, 21.91it/s]                                                         Testing:   0%|          | 0/12 [00:00<?, ?it/s]Testing:   8%|▊         | 1/12 [00:02<00:27,  2.49s/it]Testing:  33%|███▎      | 4/12 [00:02<00:04,  1.99it/s]Testing:  67%|██████▋   | 8/12 [00:02<00:00,  4.54it/s]Testing:  92%|█████████▏| 11/12 [00:02<00:00,  6.41it/s]                                                        Train Loss: 0.0039 | Train Acc: 99.93%
+  Train Class 0 Acc: 99.72%
+  Train Class 1 Acc: 100.00%
+  Train Class 2 Acc: 100.00%
+  Train Class 3 Acc: 100.00%
+Test Loss: 0.9376 | Test Acc: 67.91%
+  Test Class 0 Acc: 76.47%
+  Test Class 1 Acc: 63.03%
+  Test Class 2 Acc: 65.44%
+  Test Class 3 Acc: 75.00%
+Average Accuracy: 67.86%
+Epoch [15/30]
+Training:   0%|          | 0/48 [00:00<?, ?it/s]Training:   2%|▏         | 1/48 [00:02<02:00,  2.56s/it]Training:   8%|▊         | 4/48 [00:02<00:22,  1.92it/s]Training:  15%|█▍        | 7/48 [00:02<00:10,  3.78it/s]Training:  19%|█▉        | 9/48 [00:02<00:07,  5.04it/s]Training:  25%|██▌       | 12/48 [00:03<00:04,  7.58it/s]Training:  29%|██▉       | 14/48 [00:03<00:03,  8.83it/s]Training:  35%|███▌      | 17/48 [00:03<00:02, 10.46it/s]Training:  40%|███▉      | 19/48 [00:03<00:02, 11.75it/s]Training:  44%|████▍     | 21/48 [00:03<00:02, 12.44it/s]Training:  50%|█████     | 24/48 [00:03<00:01, 15.17it/s]Training:  54%|█████▍    | 26/48 [00:03<00:01, 14.16it/s]Training:  60%|██████    | 29/48 [00:04<00:01, 15.17it/s]Training:  67%|██████▋   | 32/48 [00:04<00:00, 17.15it/s]Training:  71%|███████   | 34/48 [00:04<00:00, 15.67it/s]Training:  77%|███████▋  | 37/48 [00:04<00:00, 15.58it/s]Training:  83%|████████▎ | 40/48 [00:04<00:00, 17.83it/s]Training:  88%|████████▊ | 42/48 [00:04<00:00, 16.58it/s]Training:  94%|█████████▍| 45/48 [00:05<00:00, 16.28it/s]                                                         Testing:   0%|          | 0/12 [00:00<?, ?it/s]Testing:   8%|▊         | 1/12 [00:02<00:26,  2.44s/it]Testing:  25%|██▌       | 3/12 [00:02<00:06,  1.48it/s]Testing:  50%|█████     | 6/12 [00:02<00:01,  3.53it/s]Testing:  75%|███████▌  | 9/12 [00:02<00:00,  5.79it/s]Testing:  92%|█████████▏| 11/12 [00:02<00:00,  7.34it/s]                                                        Train Loss: 0.0084 | Train Acc: 99.74%
+  Train Class 0 Acc: 99.72%
+  Train Class 1 Acc: 99.41%
+  Train Class 2 Acc: 99.63%
+  Train Class 3 Acc: 100.00%
+Test Loss: 0.9219 | Test Acc: 71.39%
+  Test Class 0 Acc: 92.16%
+  Test Class 1 Acc: 59.66%
+  Test Class 2 Acc: 72.79%
+  Test Class 3 Acc: 73.53%
+Average Accuracy: 68.09%
+Model saved.
+Epoch [16/30]
+Training:   0%|          | 0/48 [00:00<?, ?it/s]Training:   2%|▏         | 1/48 [00:02<01:55,  2.46s/it]Training:   4%|▍         | 2/48 [00:02<00:50,  1.09s/it]Training:   8%|▊         | 4/48 [00:02<00:19,  2.21it/s]Training:  15%|█▍        | 7/48 [00:02<00:09,  4.44it/s]Training:  21%|██        | 10/48 [00:03<00:05,  7.02it/s]Training:  27%|██▋       | 13/48 [00:03<00:04,  8.62it/s]Training:  33%|███▎      | 16/48 [00:03<00:02, 11.23it/s]Training:  40%|███▉      | 19/48 [00:03<00:02, 13.67it/s]Training:  46%|████▌     | 22/48 [00:03<00:01, 14.15it/s]Training:  52%|█████▏    | 25/48 [00:03<00:01, 16.41it/s]Training:  58%|█████▊    | 28/48 [00:04<00:01, 16.10it/s]Training:  62%|██████▎   | 30/48 [00:04<00:01, 15.14it/s]Training:  69%|██████▉   | 33/48 [00:04<00:00, 17.43it/s]Training:  73%|███████▎  | 35/48 [00:04<00:00, 15.06it/s]Training:  77%|███████▋  | 37/48 [00:04<00:00, 15.56it/s]Training:  83%|████████▎ | 40/48 [00:04<00:00, 17.53it/s]Training:  88%|████████▊ | 42/48 [00:04<00:00, 16.02it/s]Training:  94%|█████████▍| 45/48 [00:05<00:00, 17.34it/s]                                                         Testing:   0%|          | 0/12 [00:00<?, ?it/s]Testing:   8%|▊         | 1/12 [00:02<00:26,  2.44s/it]Testing:  33%|███▎      | 4/12 [00:02<00:03,  2.01it/s]Testing:  58%|█████▊    | 7/12 [00:02<00:01,  3.95it/s]Testing:  75%|███████▌  | 9/12 [00:02<00:00,  5.39it/s]Testing: 100%|██████████| 12/12 [00:02<00:00,  8.21it/s]                                                        Train Loss: 0.0049 | Train Acc: 100.00%
+  Train Class 0 Acc: 100.00%
+  Train Class 1 Acc: 100.00%
+  Train Class 2 Acc: 100.00%
+  Train Class 3 Acc: 100.00%
+Test Loss: 0.8376 | Test Acc: 72.46%
+  Test Class 0 Acc: 96.08%
+  Test Class 1 Acc: 61.34%
+  Test Class 2 Acc: 72.06%
+  Test Class 3 Acc: 75.00%
+Average Accuracy: 68.37%
+Model saved.
+Epoch [17/30]
+Training:   0%|          | 0/48 [00:00<?, ?it/s]Training:   2%|▏         | 1/48 [00:02<01:59,  2.54s/it]Training:   8%|▊         | 4/48 [00:02<00:22,  1.93it/s]Training:  15%|█▍        | 7/48 [00:02<00:10,  3.79it/s]Training:  19%|█▉        | 9/48 [00:02<00:07,  5.05it/s]Training:  25%|██▌       | 12/48 [00:03<00:04,  7.61it/s]Training:  29%|██▉       | 14/48 [00:03<00:03,  8.85it/s]Training:  35%|███▌      | 17/48 [00:03<00:02, 10.59it/s]Training:  42%|████▏     | 20/48 [00:03<00:02, 13.32it/s]Training:  46%|████▌     | 22/48 [00:03<00:01, 13.23it/s]Training:  52%|█████▏    | 25/48 [00:03<00:01, 13.70it/s]Training:  58%|█████▊    | 28/48 [00:03<00:01, 16.06it/s]Training:  62%|██████▎   | 30/48 [00:04<00:01, 14.87it/s]Training:  69%|██████▉   | 33/48 [00:04<00:00, 15.61it/s]Training:  75%|███████▌  | 36/48 [00:04<00:00, 17.46it/s]Training:  79%|███████▉  | 38/48 [00:04<00:00, 16.01it/s]Training:  85%|████████▌ | 41/48 [00:04<00:00, 16.02it/s]Training:  90%|████████▉ | 43/48 [00:04<00:00, 16.07it/s]Training:  94%|█████████▍| 45/48 [00:05<00:00, 16.77it/s]                                                         Testing:   0%|          | 0/12 [00:00<?, ?it/s]Testing:   8%|▊         | 1/12 [00:02<00:27,  2.51s/it]Testing:  42%|████▏     | 5/12 [00:02<00:02,  2.45it/s]Testing:  75%|███████▌  | 9/12 [00:02<00:00,  4.77it/s]                                                       Train Loss: 0.0048 | Train Acc: 99.87%
+  Train Class 0 Acc: 100.00%
+  Train Class 1 Acc: 99.71%
+  Train Class 2 Acc: 100.00%
+  Train Class 3 Acc: 99.82%
+Test Loss: 1.0114 | Test Acc: 66.31%
+  Test Class 0 Acc: 88.24%
+  Test Class 1 Acc: 57.14%
+  Test Class 2 Acc: 61.76%
+  Test Class 3 Acc: 75.00%
+Average Accuracy: 68.24%
+Epoch [18/30]
+Training:   0%|          | 0/48 [00:00<?, ?it/s]Training:   2%|▏         | 1/48 [00:02<01:59,  2.54s/it]Training:   8%|▊         | 4/48 [00:02<00:22,  1.93it/s]Training:  15%|█▍        | 7/48 [00:02<00:10,  3.79it/s]Training:  19%|█▉        | 9/48 [00:02<00:07,  5.10it/s]Training:  25%|██▌       | 12/48 [00:03<00:04,  7.66it/s]Training:  29%|██▉       | 14/48 [00:03<00:03,  8.78it/s]Training:  35%|███▌      | 17/48 [00:03<00:02, 10.69it/s]Training:  42%|████▏     | 20/48 [00:03<00:02, 13.06it/s]Training:  46%|████▌     | 22/48 [00:03<00:01, 13.07it/s]Training:  52%|█████▏    | 25/48 [00:03<00:01, 14.10it/s]Training:  58%|█████▊    | 28/48 [00:04<00:01, 15.67it/s]Training:  62%|██████▎   | 30/48 [00:04<00:01, 15.49it/s]Training:  69%|██████▉   | 33/48 [00:04<00:00, 15.31it/s]Training:  73%|███████▎  | 35/48 [00:04<00:00, 16.19it/s]Training:  77%|███████▋  | 37/48 [00:04<00:00, 15.63it/s]Training:  81%|████████▏ | 39/48 [00:04<00:00, 16.32it/s]Training:  85%|████████▌ | 41/48 [00:04<00:00, 15.51it/s]Training:  92%|█████████▏| 44/48 [00:04<00:00, 18.01it/s]Training:  96%|█████████▌| 46/48 [00:05<00:00, 17.62it/s]                                                         Testing:   0%|          | 0/12 [00:00<?, ?it/s]Testing:   8%|▊         | 1/12 [00:02<00:26,  2.45s/it]Testing:  25%|██▌       | 3/12 [00:02<00:06,  1.47it/s]Testing:  50%|█████     | 6/12 [00:02<00:01,  3.53it/s]Testing:  75%|███████▌  | 9/12 [00:02<00:00,  5.75it/s]Testing:  92%|█████████▏| 11/12 [00:02<00:00,  7.30it/s]                                                        Train Loss: 0.0054 | Train Acc: 99.93%
+  Train Class 0 Acc: 99.72%
+  Train Class 1 Acc: 100.00%
+  Train Class 2 Acc: 100.00%
+  Train Class 3 Acc: 100.00%
+Test Loss: 0.9522 | Test Acc: 68.72%
+  Test Class 0 Acc: 86.27%
+  Test Class 1 Acc: 59.66%
+  Test Class 2 Acc: 66.91%
+  Test Class 3 Acc: 75.00%
+Average Accuracy: 68.27%
+Epoch [19/30]
+Training:   0%|          | 0/48 [00:00<?, ?it/s]Training:   2%|▏         | 1/48 [00:02<01:56,  2.49s/it]Training:   6%|▋         | 3/48 [00:02<00:31,  1.44it/s]Training:  12%|█▎        | 6/48 [00:02<00:12,  3.38it/s]Training:  17%|█▋        | 8/48 [00:02<00:08,  4.79it/s]Training:  23%|██▎       | 11/48 [00:03<00:05,  6.90it/s]Training:  29%|██▉       | 14/48 [00:03<00:03,  9.52it/s]Training:  35%|███▌      | 17/48 [00:03<00:02, 11.08it/s]Training:  40%|███▉      | 19/48 [00:03<00:02, 12.05it/s]Training:  44%|████▍     | 21/48 [00:03<00:02, 12.90it/s]Training:  50%|█████     | 24/48 [00:03<00:01, 15.21it/s]Training:  54%|█████▍    | 26/48 [00:03<00:01, 14.69it/s]Training:  60%|██████    | 29/48 [00:04<00:01, 15.36it/s]Training:  65%|██████▍   | 31/48 [00:04<00:01, 15.57it/s]Training:  69%|██████▉   | 33/48 [00:04<00:00, 15.29it/s]Training:  75%|███████▌  | 36/48 [00:04<00:00, 17.71it/s]Training:  79%|███████▉  | 38/48 [00:04<00:00, 15.84it/s]Training:  83%|████████▎ | 40/48 [00:04<00:00, 15.96it/s]Training:  88%|████████▊ | 42/48 [00:04<00:00, 15.21it/s]Training:  92%|█████████▏| 44/48 [00:05<00:00, 16.28it/s]Training: 100%|██████████| 48/48 [00:05<00:00, 21.72it/s]                                                         Testing:   0%|          | 0/12 [00:00<?, ?it/s]Testing:   8%|▊         | 1/12 [00:02<00:26,  2.44s/it]Testing:  33%|███▎      | 4/12 [00:02<00:03,  2.00it/s]Testing:  58%|█████▊    | 7/12 [00:02<00:01,  4.01it/s]Testing:  83%|████████▎ | 10/12 [00:02<00:00,  5.83it/s]                                                        Train Loss: 0.0024 | Train Acc: 100.00%
+  Train Class 0 Acc: 100.00%
+  Train Class 1 Acc: 100.00%
+  Train Class 2 Acc: 100.00%
+  Train Class 3 Acc: 100.00%
+Test Loss: 1.0482 | Test Acc: 68.72%
+  Test Class 0 Acc: 98.04%
+  Test Class 1 Acc: 55.46%
+  Test Class 2 Acc: 66.18%
+  Test Class 3 Acc: 75.00%
+Average Accuracy: 68.29%
+Epoch [20/30]
+Training:   0%|          | 0/48 [00:00<?, ?it/s]Training:   2%|▏         | 1/48 [00:02<01:59,  2.54s/it]Training:   6%|▋         | 3/48 [00:02<00:32,  1.40it/s]Training:  12%|█▎        | 6/48 [00:02<00:13,  3.22it/s]Training:  19%|█▉        | 9/48 [00:02<00:07,  5.40it/s]Training:  23%|██▎       | 11/48 [00:03<00:05,  6.74it/s]Training:  29%|██▉       | 14/48 [00:03<00:03,  9.31it/s]Training:  35%|███▌      | 17/48 [00:03<00:02, 11.22it/s]Training:  42%|████▏     | 20/48 [00:03<00:02, 13.87it/s]Training:  48%|████▊     | 23/48 [00:03<00:01, 13.46it/s]Training:  52%|█████▏    | 25/48 [00:03<00:01, 13.59it/s]Training:  58%|█████▊    | 28/48 [00:04<00:01, 16.16it/s]Training:  62%|██████▎   | 30/48 [00:04<00:01, 15.98it/s]Training:  69%|██████▉   | 33/48 [00:04<00:00, 15.06it/s]Training:  75%|███████▌  | 36/48 [00:04<00:00, 17.45it/s]Training:  79%|███████▉  | 38/48 [00:04<00:00, 16.27it/s]Training:  83%|████████▎ | 40/48 [00:04<00:00, 16.15it/s]Training:  88%|████████▊ | 42/48 [00:04<00:00, 15.74it/s]Training:  94%|█████████▍| 45/48 [00:05<00:00, 16.85it/s]                                                         Testing:   0%|          | 0/12 [00:00<?, ?it/s]Testing:   8%|▊         | 1/12 [00:02<00:26,  2.45s/it]Testing:  33%|███▎      | 4/12 [00:02<00:04,  1.99it/s]Testing:  58%|█████▊    | 7/12 [00:02<00:01,  3.99it/s]Testing:  83%|████████▎ | 10/12 [00:02<00:00,  5.81it/s]                                                        Train Loss: 0.0011 | Train Acc: 100.00%
+  Train Class 0 Acc: 100.00%
+  Train Class 1 Acc: 100.00%
+  Train Class 2 Acc: 100.00%
+  Train Class 3 Acc: 100.00%
+Test Loss: 0.9479 | Test Acc: 70.32%
+  Test Class 0 Acc: 98.04%
+  Test Class 1 Acc: 57.14%
+  Test Class 2 Acc: 69.12%
+  Test Class 3 Acc: 75.00%
+Average Accuracy: 68.40%
+Epoch [21/30]
+Training:   0%|          | 0/48 [00:00<?, ?it/s]Training:   2%|▏         | 1/48 [00:02<02:00,  2.56s/it]Training:   8%|▊         | 4/48 [00:02<00:22,  1.92it/s]Training:  15%|█▍        | 7/48 [00:02<00:10,  3.79it/s]Training:  19%|█▉        | 9/48 [00:02<00:07,  5.14it/s]Training:  23%|██▎       | 11/48 [00:03<00:05,  6.53it/s]Training:  29%|██▉       | 14/48 [00:03<00:03,  8.95it/s]Training:  35%|███▌      | 17/48 [00:03<00:02, 10.72it/s]Training:  42%|████▏     | 20/48 [00:03<00:02, 13.43it/s]Training:  46%|████▌     | 22/48 [00:03<00:01, 13.29it/s]Training:  52%|█████▏    | 25/48 [00:03<00:01, 14.34it/s]Training:  58%|█████▊    | 28/48 [00:04<00:01, 16.22it/s]Training:  62%|██████▎   | 30/48 [00:04<00:01, 15.29it/s]Training:  69%|██████▉   | 33/48 [00:04<00:00, 15.69it/s]Training:  75%|███████▌  | 36/48 [00:04<00:00, 17.96it/s]Training:  79%|███████▉  | 38/48 [00:04<00:00, 16.09it/s]Training:  85%|████████▌ | 41/48 [00:04<00:00, 16.70it/s]Training:  90%|████████▉ | 43/48 [00:04<00:00, 17.15it/s]Training:  94%|█████████▍| 45/48 [00:05<00:00, 16.88it/s]                                                         Testing:   0%|          | 0/12 [00:00<?, ?it/s]Testing:   8%|▊         | 1/12 [00:02<00:27,  2.47s/it]Testing:  33%|███▎      | 4/12 [00:02<00:04,  1.98it/s]Testing:  67%|██████▋   | 8/12 [00:02<00:00,  4.55it/s]Testing:  83%|████████▎ | 10/12 [00:02<00:00,  5.58it/s]                                                        Train Loss: 0.0011 | Train Acc: 100.00%
+  Train Class 0 Acc: 100.00%
+  Train Class 1 Acc: 100.00%
+  Train Class 2 Acc: 100.00%
+  Train Class 3 Acc: 100.00%
+Test Loss: 0.9382 | Test Acc: 70.86%
+  Test Class 0 Acc: 98.04%
+  Test Class 1 Acc: 57.14%
+  Test Class 2 Acc: 70.59%
+  Test Class 3 Acc: 75.00%
+Average Accuracy: 68.51%
+Epoch [22/30]
+Training:   0%|          | 0/48 [00:00<?, ?it/s]Training:   2%|▏         | 1/48 [00:02<01:58,  2.52s/it]Training:   6%|▋         | 3/48 [00:02<00:31,  1.43it/s]Training:  12%|█▎        | 6/48 [00:02<00:12,  3.35it/s]Training:  19%|█▉        | 9/48 [00:02<00:06,  5.59it/s]Training:  23%|██▎       | 11/48 [00:03<00:05,  7.03it/s]Training:  27%|██▋       | 13/48 [00:03<00:04,  8.37it/s]Training:  31%|███▏      | 15/48 [00:03<00:03,  9.87it/s]Training:  38%|███▊      | 18/48 [00:03<00:02, 11.77it/s]Training:  44%|████▍     | 21/48 [00:03<00:01, 13.98it/s]Training:  48%|████▊     | 23/48 [00:03<00:01, 14.41it/s]Training:  52%|█████▏    | 25/48 [00:03<00:01, 14.85it/s]Training:  56%|█████▋    | 27/48 [00:03<00:01, 15.14it/s]Training:  62%|██████▎   | 30/48 [00:04<00:01, 15.04it/s]Training:  69%|██████▉   | 33/48 [00:04<00:00, 15.79it/s]Training:  73%|███████▎  | 35/48 [00:04<00:00, 16.16it/s]Training:  77%|███████▋  | 37/48 [00:04<00:00, 15.87it/s]Training:  81%|████████▏ | 39/48 [00:04<00:00, 16.44it/s]Training:  85%|████████▌ | 41/48 [00:04<00:00, 15.85it/s]Training:  90%|████████▉ | 43/48 [00:04<00:00, 15.42it/s]Training:  96%|█████████▌| 46/48 [00:05<00:00, 17.86it/s]                                                         Testing:   0%|          | 0/12 [00:00<?, ?it/s]Testing:   8%|▊         | 1/12 [00:02<00:27,  2.49s/it]Testing:  42%|████▏     | 5/12 [00:02<00:02,  2.50it/s]Testing:  67%|██████▋   | 8/12 [00:02<00:00,  4.38it/s]Testing:  92%|█████████▏| 11/12 [00:02<00:00,  6.42it/s]                                                        Train Loss: 0.0012 | Train Acc: 100.00%
+  Train Class 0 Acc: 100.00%
+  Train Class 1 Acc: 100.00%
+  Train Class 2 Acc: 100.00%
+  Train Class 3 Acc: 100.00%
+Test Loss: 0.9742 | Test Acc: 71.12%
+  Test Class 0 Acc: 98.04%
+  Test Class 1 Acc: 55.46%
+  Test Class 2 Acc: 72.79%
+  Test Class 3 Acc: 75.00%
+Average Accuracy: 68.63%
+Epoch [23/30]
+Training:   0%|          | 0/48 [00:00<?, ?it/s]Training:   2%|▏         | 1/48 [00:02<01:58,  2.52s/it]Training:   4%|▍         | 2/48 [00:02<00:51,  1.12s/it]Training:  10%|█         | 5/48 [00:02<00:14,  2.89it/s]Training:  17%|█▋        | 8/48 [00:02<00:07,  5.10it/s]Training:  23%|██▎       | 11/48 [00:03<00:05,  7.40it/s]Training:  27%|██▋       | 13/48 [00:03<00:04,  8.72it/s]Training:  33%|███▎      | 16/48 [00:03<00:02, 10.98it/s]Training:  38%|███▊      | 18/48 [00:03<00:02, 11.58it/s]Training:  42%|████▏     | 20/48 [00:03<00:02, 12.54it/s]Training:  46%|████▌     | 22/48 [00:03<00:01, 13.14it/s]Training:  52%|█████▏    | 25/48 [00:03<00:01, 14.58it/s]Training:  58%|█████▊    | 28/48 [00:04<00:01, 15.53it/s]Training:  62%|██████▎   | 30/48 [00:04<00:01, 16.22it/s]Training:  67%|██████▋   | 32/48 [00:04<00:00, 16.20it/s]Training:  71%|███████   | 34/48 [00:04<00:00, 16.49it/s]Training:  75%|███████▌  | 36/48 [00:04<00:00, 16.18it/s]Training:  79%|███████▉  | 38/48 [00:04<00:00, 16.13it/s]Training:  85%|████████▌ | 41/48 [00:04<00:00, 16.18it/s]Training:  92%|█████████▏| 44/48 [00:05<00:00, 17.33it/s]Training:  98%|█████████▊| 47/48 [00:05<00:00, 19.55it/s]                                                         Testing:   0%|          | 0/12 [00:00<?, ?it/s]Testing:   8%|▊         | 1/12 [00:02<00:27,  2.47s/it]Testing:  25%|██▌       | 3/12 [00:02<00:06,  1.47it/s]Testing:  50%|█████     | 6/12 [00:02<00:01,  3.47it/s]Testing:  75%|███████▌  | 9/12 [00:02<00:00,  5.76it/s]Testing:  92%|█████████▏| 11/12 [00:02<00:00,  7.35it/s]                                                        Train Loss: 0.0013 | Train Acc: 100.00%
+  Train Class 0 Acc: 100.00%
+  Train Class 1 Acc: 100.00%
+  Train Class 2 Acc: 100.00%
+  Train Class 3 Acc: 100.00%
+Test Loss: 1.0557 | Test Acc: 69.52%
+  Test Class 0 Acc: 98.04%
+  Test Class 1 Acc: 56.30%
+  Test Class 2 Acc: 67.65%
+  Test Class 3 Acc: 75.00%
+Average Accuracy: 68.67%
+Epoch [24/30]
+Training:   0%|          | 0/48 [00:00<?, ?it/s]Training:   2%|▏         | 1/48 [00:02<01:59,  2.54s/it]Training:   8%|▊         | 4/48 [00:02<00:22,  1.93it/s]Training:  15%|█▍        | 7/48 [00:02<00:10,  3.80it/s]Training:  19%|█▉        | 9/48 [00:02<00:07,  5.11it/s]Training:  25%|██▌       | 12/48 [00:03<00:04,  7.70it/s]Training:  31%|███▏      | 15/48 [00:03<00:03,  9.54it/s]Training:  35%|███▌      | 17/48 [00:03<00:03, 10.32it/s]Training:  42%|████▏     | 20/48 [00:03<00:02, 13.08it/s]Training:  46%|████▌     | 22/48 [00:03<00:01, 13.30it/s]Training:  52%|█████▏    | 25/48 [00:03<00:01, 13.46it/s]Training:  58%|█████▊    | 28/48 [00:03<00:01, 15.94it/s]Training:  62%|██████▎   | 30/48 [00:04<00:01, 15.60it/s]Training:  69%|██████▉   | 33/48 [00:04<00:00, 15.59it/s]Training:  73%|███████▎  | 35/48 [00:04<00:00, 16.41it/s]Training:  77%|███████▋  | 37/48 [00:04<00:00, 15.92it/s]Training:  83%|████████▎ | 40/48 [00:04<00:00, 18.29it/s]Training:  88%|████████▊ | 42/48 [00:04<00:00, 15.69it/s]Training:  94%|█████████▍| 45/48 [00:05<00:00, 16.42it/s]                                                         Testing:   0%|          | 0/12 [00:00<?, ?it/s]Testing:   8%|▊         | 1/12 [00:02<00:27,  2.47s/it]Testing:  33%|███▎      | 4/12 [00:02<00:04,  1.98it/s]Testing:  58%|█████▊    | 7/12 [00:02<00:01,  3.96it/s]Testing:  83%|████████▎ | 10/12 [00:02<00:00,  5.82it/s]                                                        Train Loss: 0.0007 | Train Acc: 100.00%
+  Train Class 0 Acc: 100.00%
+  Train Class 1 Acc: 100.00%
+  Train Class 2 Acc: 100.00%
+  Train Class 3 Acc: 100.00%
+Test Loss: 0.9898 | Test Acc: 70.05%
+  Test Class 0 Acc: 96.08%
+  Test Class 1 Acc: 58.82%
+  Test Class 2 Acc: 67.65%
+  Test Class 3 Acc: 75.00%
+Average Accuracy: 68.73%
+Epoch [25/30]
+Training:   0%|          | 0/48 [00:00<?, ?it/s]Training:   2%|▏         | 1/48 [00:02<01:58,  2.53s/it]Training:   8%|▊         | 4/48 [00:02<00:22,  1.94it/s]Training:  15%|█▍        | 7/48 [00:02<00:10,  3.80it/s]Training:  19%|█▉        | 9/48 [00:02<00:07,  5.20it/s]Training:  25%|██▌       | 12/48 [00:03<00:04,  7.74it/s]Training:  29%|██▉       | 14/48 [00:03<00:03,  8.58it/s]Training:  35%|███▌      | 17/48 [00:03<00:02, 10.50it/s]Training:  42%|████▏     | 20/48 [00:03<00:02, 13.15it/s]Training:  46%|████▌     | 22/48 [00:03<00:01, 13.11it/s]Training:  52%|█████▏    | 25/48 [00:03<00:01, 14.43it/s]Training:  56%|█████▋    | 27/48 [00:03<00:01, 15.26it/s]Training:  60%|██████    | 29/48 [00:04<00:01, 15.52it/s]Training:  65%|██████▍   | 31/48 [00:04<00:01, 16.50it/s]Training:  69%|██████▉   | 33/48 [00:04<00:00, 15.99it/s]Training:  73%|███████▎  | 35/48 [00:04<00:00, 16.63it/s]Training:  77%|███████▋  | 37/48 [00:04<00:00, 15.36it/s]Training:  83%|████████▎ | 40/48 [00:04<00:00, 17.55it/s]Training:  88%|████████▊ | 42/48 [00:04<00:00, 14.98it/s]Training:  94%|█████████▍| 45/48 [00:05<00:00, 17.02it/s]                                                         Testing:   0%|          | 0/12 [00:00<?, ?it/s]Testing:   8%|▊         | 1/12 [00:02<00:26,  2.44s/it]Testing:  33%|███▎      | 4/12 [00:02<00:03,  2.01it/s]Testing:  58%|█████▊    | 7/12 [00:02<00:01,  3.98it/s]Testing:  75%|███████▌  | 9/12 [00:02<00:00,  5.40it/s]Testing: 100%|██████████| 12/12 [00:02<00:00,  8.18it/s]                                                        Train Loss: 0.0007 | Train Acc: 100.00%
+  Train Class 0 Acc: 100.00%
+  Train Class 1 Acc: 100.00%
+  Train Class 2 Acc: 100.00%
+  Train Class 3 Acc: 100.00%
+Test Loss: 0.9707 | Test Acc: 69.79%
+  Test Class 0 Acc: 88.24%
+  Test Class 1 Acc: 64.71%
+  Test Class 2 Acc: 64.71%
+  Test Class 3 Acc: 75.00%
+Average Accuracy: 68.77%
+Epoch [26/30]
+Training:   0%|          | 0/48 [00:00<?, ?it/s]Training:   2%|▏         | 1/48 [00:02<02:01,  2.58s/it]Training:   6%|▋         | 3/48 [00:02<00:32,  1.39it/s]Training:  12%|█▎        | 6/48 [00:02<00:12,  3.30it/s]Training:  17%|█▋        | 8/48 [00:02<00:08,  4.66it/s]Training:  21%|██        | 10/48 [00:03<00:06,  6.10it/s]Training:  27%|██▋       | 13/48 [00:03<00:03,  9.01it/s]Training:  31%|███▏      | 15/48 [00:03<00:03, 10.13it/s]Training:  38%|███▊      | 18/48 [00:03<00:02, 13.11it/s]Training:  42%|████▏     | 20/48 [00:03<00:02, 13.79it/s]Training:  46%|████▌     | 22/48 [00:03<00:01, 14.01it/s]Training:  50%|█████     | 24/48 [00:03<00:01, 15.03it/s]Training:  54%|█████▍    | 26/48 [00:04<00:01, 13.94it/s]Training:  60%|██████    | 29/48 [00:04<00:01, 15.17it/s]Training:  65%|██████▍   | 31/48 [00:04<00:01, 15.81it/s]Training:  69%|██████▉   | 33/48 [00:04<00:00, 15.43it/s]Training:  73%|███████▎  | 35/48 [00:04<00:00, 15.58it/s]Training:  79%|███████▉  | 38/48 [00:04<00:00, 18.20it/s]Training:  83%|████████▎ | 40/48 [00:04<00:00, 17.08it/s]Training:  88%|████████▊ | 42/48 [00:04<00:00, 16.13it/s]Training:  94%|█████████▍| 45/48 [00:05<00:00, 17.91it/s]                                                         Testing:   0%|          | 0/12 [00:00<?, ?it/s]Testing:   8%|▊         | 1/12 [00:02<00:27,  2.46s/it]Testing:  33%|███▎      | 4/12 [00:02<00:04,  1.98it/s]Testing:  58%|█████▊    | 7/12 [00:02<00:01,  3.96it/s]Testing:  75%|███████▌  | 9/12 [00:02<00:00,  5.34it/s]Testing: 100%|██████████| 12/12 [00:02<00:00,  8.11it/s]                                                        Train Loss: 0.0007 | Train Acc: 100.00%
+  Train Class 0 Acc: 100.00%
+  Train Class 1 Acc: 100.00%
+  Train Class 2 Acc: 100.00%
+  Train Class 3 Acc: 100.00%
+Test Loss: 0.9486 | Test Acc: 70.86%
+  Test Class 0 Acc: 94.12%
+  Test Class 1 Acc: 59.66%
+  Test Class 2 Acc: 69.85%
+  Test Class 3 Acc: 75.00%
+Average Accuracy: 68.85%
+Epoch [27/30]
+Training:   0%|          | 0/48 [00:00<?, ?it/s]Training:   2%|▏         | 1/48 [00:02<01:56,  2.48s/it]Training:   4%|▍         | 2/48 [00:02<00:50,  1.09s/it]Training:  10%|█         | 5/48 [00:02<00:14,  2.94it/s]Training:  17%|█▋        | 8/48 [00:02<00:07,  5.27it/s]Training:  21%|██        | 10/48 [00:02<00:05,  6.73it/s]Training:  27%|██▋       | 13/48 [00:03<00:03,  9.17it/s]Training:  31%|███▏      | 15/48 [00:03<00:03, 10.77it/s]Training:  35%|███▌      | 17/48 [00:03<00:02, 11.51it/s]Training:  42%|████▏     | 20/48 [00:03<00:01, 14.13it/s]Training:  46%|████▌     | 22/48 [00:03<00:01, 13.71it/s]Training:  52%|█████▏    | 25/48 [00:03<00:01, 14.29it/s]Training:  58%|█████▊    | 28/48 [00:04<00:01, 16.37it/s]Training:  62%|██████▎   | 30/48 [00:04<00:01, 15.82it/s]Training:  67%|██████▋   | 32/48 [00:04<00:00, 16.57it/s]Training:  71%|███████   | 34/48 [00:04<00:00, 15.75it/s]Training:  75%|███████▌  | 36/48 [00:04<00:00, 14.90it/s]Training:  81%|████████▏ | 39/48 [00:04<00:00, 16.52it/s]Training:  85%|████████▌ | 41/48 [00:04<00:00, 15.84it/s]Training:  92%|█████████▏| 44/48 [00:05<00:00, 16.42it/s]Training:  98%|█████████▊| 47/48 [00:05<00:00, 19.16it/s]                                                         Testing:   0%|          | 0/12 [00:00<?, ?it/s]Testing:   8%|▊         | 1/12 [00:02<00:27,  2.46s/it]Testing:  25%|██▌       | 3/12 [00:02<00:06,  1.48it/s]Testing:  50%|█████     | 6/12 [00:02<00:01,  3.50it/s]Testing:  75%|███████▌  | 9/12 [00:02<00:00,  5.80it/s]Testing:  92%|█████████▏| 11/12 [00:02<00:00,  7.39it/s]                                                        Train Loss: 0.0009 | Train Acc: 100.00%
+  Train Class 0 Acc: 100.00%
+  Train Class 1 Acc: 100.00%
+  Train Class 2 Acc: 100.00%
+  Train Class 3 Acc: 100.00%
+Test Loss: 1.0013 | Test Acc: 69.25%
+  Test Class 0 Acc: 100.00%
+  Test Class 1 Acc: 52.10%
+  Test Class 2 Acc: 69.85%
+  Test Class 3 Acc: 75.00%
+Average Accuracy: 68.87%
+Epoch [28/30]
+Training:   0%|          | 0/48 [00:00<?, ?it/s]Training:   2%|▏         | 1/48 [00:02<01:57,  2.49s/it]Training:   6%|▋         | 3/48 [00:02<00:32,  1.40it/s]Training:  12%|█▎        | 6/48 [00:02<00:12,  3.30it/s]Training:  17%|█▋        | 8/48 [00:02<00:08,  4.65it/s]Training:  23%|██▎       | 11/48 [00:03<00:05,  7.18it/s]Training:  29%|██▉       | 14/48 [00:03<00:03,  9.18it/s]Training:  33%|███▎      | 16/48 [00:03<00:03, 10.44it/s]Training:  40%|███▉      | 19/48 [00:03<00:02, 12.11it/s]Training:  46%|████▌     | 22/48 [00:03<00:01, 14.18it/s]Training:  52%|█████▏    | 25/48 [00:03<00:01, 15.09it/s]Training:  56%|█████▋    | 27/48 [00:03<00:01, 15.16it/s]Training:  60%|██████    | 29/48 [00:04<00:01, 15.28it/s]Training:  65%|██████▍   | 31/48 [00:04<00:01, 15.29it/s]Training:  69%|██████▉   | 33/48 [00:04<00:00, 15.33it/s]Training:  73%|███████▎  | 35/48 [00:04<00:00, 15.41it/s]Training:  79%|███████▉  | 38/48 [00:04<00:00, 17.19it/s]Training:  85%|████████▌ | 41/48 [00:04<00:00, 16.80it/s]Training:  90%|████████▉ | 43/48 [00:04<00:00, 16.48it/s]Training:  96%|█████████▌| 46/48 [00:05<00:00, 18.88it/s]                                                         Testing:   0%|          | 0/12 [00:00<?, ?it/s]Testing:   8%|▊         | 1/12 [00:02<00:27,  2.49s/it]Testing:  33%|███▎      | 4/12 [00:02<00:03,  2.00it/s]Testing:  58%|█████▊    | 7/12 [00:02<00:01,  3.98it/s]Testing:  83%|████████▎ | 10/12 [00:02<00:00,  5.86it/s]                                                        Train Loss: 0.0017 | Train Acc: 99.93%
+  Train Class 0 Acc: 100.00%
+  Train Class 1 Acc: 99.71%
+  Train Class 2 Acc: 100.00%
+  Train Class 3 Acc: 100.00%
+Test Loss: 1.1671 | Test Acc: 67.11%
+  Test Class 0 Acc: 84.31%
+  Test Class 1 Acc: 57.98%
+  Test Class 2 Acc: 64.71%
+  Test Class 3 Acc: 75.00%
+Average Accuracy: 68.80%
+Epoch [29/30]
+Training:   0%|          | 0/48 [00:00<?, ?it/s]Training:   2%|▏         | 1/48 [00:02<01:58,  2.51s/it]Training:   8%|▊         | 4/48 [00:02<00:22,  1.94it/s]Training:  15%|█▍        | 7/48 [00:02<00:10,  3.81it/s]Training:  19%|█▉        | 9/48 [00:02<00:07,  5.09it/s]Training:  25%|██▌       | 12/48 [00:03<00:04,  7.65it/s]Training:  29%|██▉       | 14/48 [00:03<00:03,  8.86it/s]Training:  35%|███▌      | 17/48 [00:03<00:02, 10.65it/s]Training:  42%|████▏     | 20/48 [00:03<00:02, 13.04it/s]Training:  46%|████▌     | 22/48 [00:03<00:02, 12.98it/s]Training:  52%|█████▏    | 25/48 [00:03<00:01, 14.39it/s]Training:  56%|█████▋    | 27/48 [00:03<00:01, 14.39it/s]Training:  60%|██████    | 29/48 [00:04<00:01, 14.60it/s]Training:  67%|██████▋   | 32/48 [00:04<00:00, 17.11it/s]Training:  71%|███████   | 34/48 [00:04<00:00, 15.29it/s]Training:  77%|███████▋  | 37/48 [00:04<00:00, 15.41it/s]Training:  83%|████████▎ | 40/48 [00:04<00:00, 17.76it/s]Training:  88%|████████▊ | 42/48 [00:04<00:00, 16.59it/s]Training:  92%|█████████▏| 44/48 [00:05<00:00, 15.01it/s]                                                         Testing:   0%|          | 0/12 [00:00<?, ?it/s]Testing:   8%|▊         | 1/12 [00:02<00:27,  2.53s/it]Testing:  42%|████▏     | 5/12 [00:02<00:02,  2.46it/s]Testing:  67%|██████▋   | 8/12 [00:02<00:00,  4.28it/s]Testing:  83%|████████▎ | 10/12 [00:02<00:00,  5.48it/s]                                                        Train Loss: 0.0026 | Train Acc: 99.93%
+  Train Class 0 Acc: 99.72%
+  Train Class 1 Acc: 100.00%
+  Train Class 2 Acc: 100.00%
+  Train Class 3 Acc: 100.00%
+Test Loss: 1.1829 | Test Acc: 64.17%
+  Test Class 0 Acc: 98.04%
+  Test Class 1 Acc: 33.61%
+  Test Class 2 Acc: 72.79%
+  Test Class 3 Acc: 75.00%
+Average Accuracy: 68.64%
+Epoch [30/30]
+Training:   0%|          | 0/48 [00:00<?, ?it/s]Training:   2%|▏         | 1/48 [00:02<02:01,  2.58s/it]Training:   6%|▋         | 3/48 [00:02<00:32,  1.40it/s]Training:  12%|█▎        | 6/48 [00:02<00:12,  3.27it/s]Training:  19%|█▉        | 9/48 [00:02<00:07,  5.49it/s]Training:  23%|██▎       | 11/48 [00:03<00:05,  6.78it/s]Training:  29%|██▉       | 14/48 [00:03<00:03,  8.79it/s]Training:  35%|███▌      | 17/48 [00:03<00:02, 11.16it/s]Training:  40%|███▉      | 19/48 [00:03<00:02, 12.15it/s]Training:  44%|████▍     | 21/48 [00:03<00:02, 13.04it/s]Training:  48%|████▊     | 23/48 [00:03<00:01, 13.81it/s]Training:  52%|█████▏    | 25/48 [00:03<00:01, 14.14it/s]Training:  58%|█████▊    | 28/48 [00:04<00:01, 16.59it/s]Training:  62%|██████▎   | 30/48 [00:04<00:01, 15.92it/s]Training:  67%|██████▋   | 32/48 [00:04<00:01, 15.33it/s]Training:  71%|███████   | 34/48 [00:04<00:00, 16.19it/s]Training:  75%|███████▌  | 36/48 [00:04<00:00, 16.40it/s]Training:  79%|███████▉  | 38/48 [00:04<00:00, 15.21it/s]Training:  83%|████████▎ | 40/48 [00:04<00:00, 14.02it/s]Training:  88%|████████▊ | 42/48 [00:05<00:00, 14.60it/s]Training:  96%|█████████▌| 46/48 [00:05<00:00, 20.31it/s]                                                         Testing:   0%|          | 0/12 [00:00<?, ?it/s]Testing:   8%|▊         | 1/12 [00:02<00:27,  2.47s/it]Testing:  25%|██▌       | 3/12 [00:02<00:06,  1.47it/s]Testing:  50%|█████     | 6/12 [00:02<00:01,  3.50it/s]Testing:  75%|███████▌  | 9/12 [00:02<00:00,  5.68it/s]                                                       Train Loss: 0.0011 | Train Acc: 100.00%
+  Train Class 0 Acc: 100.00%
+  Train Class 1 Acc: 100.00%
+  Train Class 2 Acc: 100.00%
+  Train Class 3 Acc: 100.00%
+Test Loss: 0.9791 | Test Acc: 70.59%
+  Test Class 0 Acc: 96.08%
+  Test Class 1 Acc: 55.46%
+  Test Class 2 Acc: 72.06%
+  Test Class 3 Acc: 75.00%
+Average Accuracy: 68.71%
+Training complete.
+Best Test Acc: 72.46%
+Average Accuracy: 68.71%

@@ -17,7 +17,6 @@ class PatchShuffleTransform:
         C, H, W = img_tensor.shape
         
         # Ensure H and W are divisible by patch_size
-        # If not, you could handle by cropping or other means. Here we assume it is divisible.
         assert H % self.patch_size == 0 and W % self.patch_size == 0, "Image size not divisible by patch size"
         
         # Number of patches along each dimension
@@ -29,7 +28,7 @@ class PatchShuffleTransform:
         # patches shape: C, num_patches_h, num_patches_w, patch_size, patch_size
         
         # Rearrange to have patches in a list
-        # Let's transpose to get shape: num_patches_h, num_patches_w, C, patch_size, patch_size
+        # Transpose to get shape: num_patches_h, num_patches_w, C, patch_size, patch_size
         patches = patches.permute(1, 2, 0, 3, 4)  # (num_patches_h, num_patches_w, C, patch_size, patch_size)
         
         # Flatten into a list of patches

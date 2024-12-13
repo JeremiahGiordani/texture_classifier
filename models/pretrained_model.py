@@ -5,7 +5,7 @@ import torchvision.models as models
 pretrained_weights = "/home/jg0037/.cache/torch/hub/checkpoints/resnet18-f37072fd.pth"
 
 def get_pretrained_model(num_classes=4):
-    # Example: Use ResNet18 pretrained on ImageNet
+    # Use ResNet18 pretrained on ImageNet
     weights = torch.load(pretrained_weights)
     model = models.resnet18()
     model.load_state_dict(weights)
